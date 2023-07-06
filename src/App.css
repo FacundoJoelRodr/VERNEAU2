@@ -1,0 +1,8 @@
+  #carrito{
+    width: 10px;
+    height: 10px;
+  }
+
+  .navbar .navbar-brand .nav-link {
+    text-decoration: none !important;
+  }

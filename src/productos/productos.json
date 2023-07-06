@@ -1,0 +1,10 @@
+[
+ {"id":"1","nombre":"Remera","imagen":"https://c59665d793.clvaw-cdnwnd.com/7f3fad59a6bdaa56058dfd4aa53bb254/200000029-8f9758f977/fondo_de_armario_hombre_502004541.jpg?ph=c59665d793","precio":"8500","tipo":"Remeras"},
+ {"id":"2","nombre":"Campera","imagen":"https://media.solodeportes.com.ar/media/catalog/product/cache/7c4f9b393f0b8cb75f2b74fe5e9e52aa/c/a/campera-con-capucha-puma-power-colorblock-blanca-640020848805002-1.jpg","precio":"7400","tipo":"Camperas"},
+ {"id":"3","nombre":"Buzo","imagen":"https://elasdeljean.com/wp-content/uploads/2020/05/1588862871930b1f1691ce2d141c240749a37cdbff.jpg","precio":"9500","tipo":"Buzos"},
+ {"id":"4","nombre":"Remera","imagen":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQa22QXJpFLUdBQ5tzaPZGaIZC27_NQLQZFAQ&usqp=CAU","precio":"20000","tipo":"Remeras"},
+ {"id":"5","nombre":"Remera","imagen":"https://d22fxaf9t8d39k.cloudfront.net/17fc22c539fdd560f066eb8339a5f3a1e71deab169c3f06f719f48ea21ebac0661225.png","precio":"4000","tipo":"Remeras"},
+ {"id":"6","nombre":"Campera","imagen":"https://media.solodeportes.com.ar/media/catalog/product/cache/7c4f9b393f0b8cb75f2b74fe5e9e52aa/c/a/campera-kappa-banda-anniston-slim-mujer-blanca-39502301psc0c45-1.jpg","precio":"20000","tipo":"Camperas"},
+ {"id":"7","nombre":"Buzo","imagen":"https://d3ugyf2ht6aenh.cloudfront.net/stores/440/495/products/buzo-gato-blanco-adelante1-6ed1e8fcbb9a0a477015938793540542-480-0.webp","precio":"10000","tipo":"Buzos"},
+ {"id":"8","nombre":"Campera","imagen":"https://cdn.shopify.com/s/files/1/0594/7506/7048/files/campera-roxy-snow-jetty-lila-pastel-indy-1.jpg?v=1686167494&width=533","precio":"25000","tipo":"Camperas"}
+]

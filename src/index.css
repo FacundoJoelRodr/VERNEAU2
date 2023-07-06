@@ -1,0 +1,92 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: rgba(230, 230, 230, 1) !important;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/*NAVBAR*/
+.navbar-prin{
+  background-color: #81c784 !important;
+  height: 10vh !important;
+}
+
+.nav-link{
+  font-size: larger !important; 
+}
+
+.logo{
+  text-decoration: none;
+  color: black;
+  font-size:150%;
+  font-weight: 600;
+  margin-left: -230% !important;
+}
+
+.nav-items{
+  margin-left: 85% !important;
+}
+
+.logoImg{
+  width: 120%;
+}
+
+/*CARD*/
+.titulo_principal{
+  margin-left: 35%;
+  margin-bottom: 4%;
+  margin-top: 4%;
+  margin-right: 30%;
+  
+}
+
+.boton-detalles{
+margin-left: 15%;
+width: 70%;
+background-color: #a5d6a7 !important;
+border-color:#a5d6a7 !important;
+color: black !important;
+box-shadow: 2px 2px 1px 1px rgba(0, 0, 0, 0.2) !important;
+}
+
+.nombre_item{
+  text-align:  center;
+}
+.precio_item{
+  text-align: center;
+}
+
+.mx-3{
+  background-color:rgba(255, 255, 255, 1) !important;
+  border-radius: 55px ;
+  margin-left: 38%;
+  box-shadow: 2px 2px 9px 4px rgba(0, 0, 0, 0.2) !important;
+}
+
+.detalle_prod{
+  margin-left: 40% !important;
+}
+
+#carrito{
+  width: 10px;
+  height: 10px;
+  margin-left: -60%;
+  margin-top: 60%;
+}
+.carrito{
+  margin-left: 5%;
+  text-decoration: none;
+  color: black;
+}
+.spanCarrito{
+ margin-left:5%;
+
+}
