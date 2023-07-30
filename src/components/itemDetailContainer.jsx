@@ -1,31 +1,40 @@
+import React, { useState, useEffect,useContext } from 'react';
+import { useParams } from 'react-router-dom'; 
+import ItemDetail from './itemDetail';
+import { getFirestore, doc, getDoc } from 'firebase/firestore';
+import { CartContext } from './cartContext';
 
-import React from 'react';
-import {useState, useEffect} from "react" 
-import productosJson from '../productos/productos.json';
-import { ItemDetail} from './itemDetail';
+const ItemDetailContainer = () => {
+  const [producto, setProducto] = useState(null);
+  const { agregarAlCarrito } = useContext(CartContext);
+  const { id } = useParams();
 
-const ItemListConteiner = (props) => {
-  const [producto, setProducto] = useState([]);
-  useEffect(()=>{
-    const promise = new Promise((resolve, rejected)=>{
-      setTimeout(()=>{
-        resolve(productosJson);
-      },500);
-    });
 
-    promise.then(result =>{ 
-        setProducto(result[0])
-    });
-  }, []);
+  useEffect(() => {
+    const fetchProducto = async () => {
+      try {
+        const db = getFirestore();
+        const refDoc = doc(db, 'ItemCollection', id);
+        const snapshot = await getDoc(refDoc);
 
-    return (
-  <>
-   <div className='container'>
-  <h1 className='titulo_principal'>Detalle de Producto</h1>
-  {producto === null ? <div className='cargando'>Cargando el producto</div> : <ItemDetail p= {producto}/>}
-  </div>
-  
-    </>
-    );
+        if (snapshot.exists()) {
+          setProducto({ id: snapshot.id, ...snapshot.data() });
+        } else {
+          console.error('No se encontró el producto con el ID especificado.');
+        }
+      } catch (error) {
+        console.error('Error al obtener el producto:', error);
+      }
+    };
+
+    fetchProducto();
+  }, [id]);
+
+  if (!producto) {
+    return <div>Cargando el producto...</div>;
   }
-export default ItemListConteiner
+
+  return <ItemDetail producto={producto} addToCarrito={agregarAlCarrito} /> ;
+};
+
+export default ItemDetailContainer;

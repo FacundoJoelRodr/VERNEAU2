@@ -10,7 +10,7 @@ export const Item = ({p})=>{
          className="mx-3 my-3 rounded"
    >
    <Card.Body>
-    <Card.Img variant="top" src={p.imagen} />
+    <Card.Img variant="top" src={p.image} />
      <Card.Title className='nombre_item'>{p.nombre}</Card.Title>
      <Card.Text className='precio_item'>
       Precio: ${p.precio}      

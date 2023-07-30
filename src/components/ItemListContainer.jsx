@@ -1,28 +1,40 @@
 import React from 'react';
 import {useState, useEffect} from "react" 
-import { useParams } from 'react-router-dom';
-import productosJson from '../productos/productos.json';
 import { ItemList } from './itemList';
 import CardGroup from 'react-bootstrap/CardGroup';
+import { getFirestore, collection, query, where, getDocs } from 'firebase/firestore';
+import { useParams } from 'react-router-dom';
 
 const ItemListConteiner = (props) => {
   const [productos, setProductos] = useState([]);
-  const {id} = useParams()
- 
-  useEffect(()=>{
-    const promise = new Promise((resolve, rejected)=>{
-      setTimeout(()=>{
-        resolve(productosJson);
-      },500);
-    });
-    promise.then(result =>{ 
-      if(id){
-        setProductos(result.filter(p => p.tipo === id))
-      }else{
-        setProductos(result)
+  const { id } = useParams();
+
+  useEffect(() => {
+    const fetchProductos = async () => {
+      try {
+        const db = getFirestore();
+        const collectionRef = collection(db, 'ItemCollection');
+        let q;
+
+        if (id) {
+          // Si hay una categoría seleccionada (id no es undefined), filtramos por categoría
+          q = query(collectionRef, where('tipo', '==', id));
+        } else {
+          // Si no hay categoría seleccionada (id es undefined), obtenemos todos los productos
+          q = query(collectionRef);
+        }
+
+        const snapshot = await getDocs(q);
+        const productosData = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+        setProductos(productosData);
+      } catch (error) {
+        console.error('Error al obtener los productos:', error);
       }
-    });
+    };
+
+    fetchProductos();
   }, [id]);
+
 
     return (
   <>
