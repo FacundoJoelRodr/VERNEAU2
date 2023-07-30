@@ -4,7 +4,7 @@
   import Navbar from 'react-bootstrap/Navbar';
   import { NavLink, Link} from 'react-router-dom';
   import imageLogo from '../assets/logo.png';
-  import CartWidget from '../components/CartWidget';
+  import CartWidget from './cartWidget';
   import { getFirestore, collection, query, where, getDocs } from 'firebase/firestore';
 
 
